@@ -13,7 +13,7 @@ Creates one file:
 Requires a working RMG Abraham.class (which may be inside a .jar)
  which in turn needs functioning GATPFit.exe in the appropriate path (see RMG instructions)
 
-Created by Richard West on 2009-06-23.
+First created by Richard West on 2009-06-23.
 Copyright (c) 2009 MIT. All rights reserved.
 """
 
@@ -108,7 +108,7 @@ for solvent,solutes in solutesDict.items():  # (warning: iterating over a dictio
 
         
     ## reading the output file
-    # I think this works better
+    # I think this works as intended
     AbrahamFile=open('Abraham_output.txt','U') # U to allow universal line endings (for Windows)
     line=AbrahamFile.readline()
     match = re.search('Solvent:\s+(?P<solvent>.*)',line)
