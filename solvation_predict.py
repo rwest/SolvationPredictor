@@ -26,7 +26,7 @@ import subprocess
 import re
 
 # you may need to change this to point to where your Abraham.class file is (which may be in an RMG.jar)
-RMG_classpath = '$RMG/software/RMG'
+RMG_classpath = '%rmg%/classes'
 
 
 # read in adjacency list data for all solutes
@@ -47,7 +47,7 @@ for line in adjList:
 solventReader = csv.DictReader(open('Solvent Database.csv'), dialect='excel') # assumes first line contains field names
 solventDict = dict()
 for solvent in solventReader:
-    asert solvent.haskey('a'), "Solvent Database should have 'a' column"
+    assert solvent.has_key('a'), "Solvent Database should have 'a' column"
     solventName = solvent['Solvents']
     solventDict[solventName] = solvent
 # should now have object like: solventDict['water']['a']
