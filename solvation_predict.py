@@ -10,8 +10,9 @@ Reads in three files:
 Creates one file:
   Solvent-Solute-Solvation_by_RMG.csv
   
-Requires a working RMG Abraham.class (which may be inside a .jar)
- which in turn needs functioning GATPFit.exe in the appropriate path (see RMG instructions)
+Requires a working RMG Abraham.class and dependency RMG classes (which may be inside a .jar)
+ which in turn needs functioning GATPFit.exe in the appropriate path 
+ (see RMG instructions at http://rmg.sourceforge.net/)
 
 First created by Richard West on 2009-06-23.
 Copyright (c) 2009 MIT. All rights reserved.
@@ -26,7 +27,10 @@ import subprocess
 import re
 
 # you may need to change this to point to where your Abraham.class file is (which may be in an RMG.jar)
-RMG_classpath = '%rmg%/classes'
+RMG_classpath = '$RMG/software/RMG'
+import platform
+if platform.system() in ('Windows', 'Microsoft'):
+	RMG_classpath = '%rmg%/classes'
 
 
 # read in adjacency list data for all solutes
