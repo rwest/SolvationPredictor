@@ -1,13 +1,13 @@
-solvation_predict.py to run RMG Abraham estimator for many solvent/solute combinations
+python solvation_predict.py to run RMG Abraham estimator for many solvent/solute combinations
 
 Reads in three files:
   adjList.txt containing RMG-style adjacency lists of all the solutes by name
   Solvent Database.csv containing Abraham's parameters for the solvents (with a header row)
   Solvent-Solute List.csv containing a list of Solvent/Solute pairs that should be estimated (with a header row)
 Creates one file:
-  Solvent-Solute-Solvation_by_RMG.csv
+  Solvent-Solute-Solvation_by_RMG.csv containing the same Solvent/Solute pairs with an extra column of logK values (without header row)
   
-Requires a working RMG Abraham.class (which may be inside a .jar)
+Requires a working RMG including Abraham.class (which may be inside a .jar)
  which in turn needs functioning GATPFit.exe in the appropriate path (see RMG instructions)
 
 First created by Richard West on 2009-06-23.
